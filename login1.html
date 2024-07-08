@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Your head content remains unchanged -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url(rajini.jpg);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            width: 45%; /* Adjust as needed */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0,0.3);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .login-buttons-container {
+            display: flex;
+            gap: 10px;
+        }
+        
+
+        button {
+            flex: 1;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 10px;
+            cursor: pointer;
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container" id="loginPage">
+        <!-- Your login form content remains unchanged -->
+        <h2>Login</h2>
+
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" name="loginUsername" required>
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required>
+
+        <!-- User Login button -->
+        <div class="login-buttons-container">
+            <button type="submit" onclick="submitUserLogin()">Login</button>
+        </div>
+
+        <div class="toggle-link" onclick="toggleForm('userSignupPage')">Don't have an account? Sign Up</div>
+    </div>
+
+    <div class="form-container" id="userSignupPage" style="display: none;">
+        <!-- Your user signup form content remains unchanged -->
+        <h2>User Signup</h2>
+        <label for="firstName">User Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Phn No:</label>
+        <input type="tel" id="lastName" name="lastName" required pattern="'[0-9]{10}">
+
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <button type="submit" onclick="submitUserSignup()">Sign Up</button>
+
+        <div class="toggle-link" onclick="toggleForm('loginPage')">Already have an account? Login</div>
+    </div>
+
+    <div class="form-container" id="nameEntryPage" style="display: none">
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" name="userName" required>
+       
+        <a href="log.html"><button type="submit" onclick="submitName()">Submit</button></a>
+    </div>
+    
+    
+    
+
+    <script>
+        function toggleForm(formId) {
+            document.getElementById('loginPage').style.display = formId === 'loginPage' ? 'block' : 'none';
+            document.getElementById('userSignupPage').style.display = formId === 'userSignupPage' ? 'block' : 'none';
+            document.getElementById('nameEntryPage').style.display = formId === 'nameEntryPage' ? 'block' : 'none';
+            document.getElementById('homePage').style.display = formId === 'homePage' ? 'block' : 'none';
+        }
+
+        function submitUserLogin() {
+            // Process user login data here
+            var loginType = 'User'; // You can use this in your logic
+            alert('Login as ' + loginType + ' successful!');
+            toggle('submitName');
+            
+        }
+
+        function submitUserSignup() {
+            // Process user signup data here
+            alert('User signup data submitted successfully!');
+            toggleForm('loginPage');
+        }
+        function submitName() {
+            var userName = document.getElementById('userName').value;
+            document.getElementById('welcomeUsername').innerText = userName;
+            toggleForm('homePage');
+        }
+
+        
+        function goToCreatePostPage() {
+    toggleForm('createPostPage');
+}
+
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(shalii.jpg);
+            text-align: center;
+            padding: 20px;
+        }
+        .post {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        button {
+            background-color: #d9534f;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Posts</h1>
+
+    <!-- Post 1 -->
+    <div class="post" id="post1">
+        <input type="checkbox" class="post-checkbox">
+        <p>This is the content of Post 1.</p>
+        <button onclick="deletePost('post1')">Delete</button>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="post" id="post2">
+        <input type="checkbox" class="post-checkbox">
+        <p>This is the content of Post 2.</p>
+        <button onclick="deletePost('post2')">Delete</button>
+    </div>
+
+    <!-- Post 3 -->
+    <div class="post" id="post3">
+        <input type="checkbox" class="post-checkbox">
+        <p>This is the content of Post 3.</p>
+        <button onclick="deletePost('post3')">Delete</button>
+    </div>
+
+    <!-- Delete Button -->
+    <button onclick="deleteSelectedPosts()">Delete Selected Posts</button>
+    <script>
+        // Function to delete a specific post
+        function deletePost(postId) {
+            var postElement = document.getElementById(postId);
+            if (confirm('Are you sure you want to delete this post?')) {
+                postElement.parentNode.removeChild(postElement);
+            }
+        }
+
+        // Function to delete selected posts
+        function deleteSelectedPosts() {
+            var selectedPosts = document.querySelectorAll('.post-checkbox:checked');
+            if (selectedPosts.length === 0) {
+                alert('No posts selected for deletion.');
+            } else {
+                if (confirm('Are you sure you want to delete the selected posts?')) {
+                    selectedPosts.forEach(function(postCheckbox) {
+                        var postElement = postCheckbox.parentNode;
+                        postElement.parentNode.removeChild(postElement);
+                    });
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

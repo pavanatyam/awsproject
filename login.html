@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Create Job Post</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		.container {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			width: 400px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 8px;
+			font-weight: bold;
+		}
+
+		input, select, textarea {
+			width: 100%;
+			padding: 8px;
+			margin-bottom: 16px;
+			box-sizing: border-box;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+
+		textarea {
+			resize: vertical;
+		}
+
+		button {
+			background-color: #4caf50;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		button:hover {
+			background-color: #45a049;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<h2>Create Post</h2>
+	<form id="jobForm">
+		<label for="jobTitle">Job Title:</label>
+		<input type="text" id="jobTitle" name="jobTitle" required>
+
+		<label for="jobDescription">Job Description:</label>
+		<textarea id="jobDescription" name="jobDescription" rows="10" required></textarea>
+
+		<label for="startTime">Start Time:</label>
+		<select id="startTime" name="startTime" required>
+			<!-- Adjusted start times based on your example -->
+			<option value="9:00 AM">9:00 AM</option>
+			<option value="10:00 AM">10:00 AM</option>
+			<option value="11:00 AM">11:00 AM</option>
+			<option value="12:00 PM">12:00 PM</option>
+			<option value="1:00 PM">1:00 PM</option>
+			<option value="2:00 PM">2:00 PM</option>
+			<option value="3:00 PM">3:00 PM</option>
+			<option value="4:00 PM">4:00 PM</option>
+			<option value="1:00 PM">5:00 PM</option>
+			<option value="2:00 PM">6:00 PM</option>
+		
+		</select>
+
+		<label for="endTime">End Time:</label>
+		<select id="endTime" name="endTime" required>
+			<!-- Adjusted end times based on your example -->
+			<option value="1:00 PM">1:00 PM</option>
+			<option value="2:00 PM">2:00 PM</option>
+			<option value="3:00 PM">3:00 PM</option>
+			<option value="4:00 PM">4:00 PM</option>
+			<option value="1:00 PM">5:00 PM</option>
+			<option value="2:00 PM">6:00 PM</option>
+			<option value="3:00 PM">7:00 PM</option>
+		</select>
+
+		<label for="workPlace">Work Place:</label>
+		<input type="text" id="workPlace" name="workPlace" required>
+
+		<label for="personIntake">Person Intake:</label>
+		<select id="personIntake" name="personIntake" required>
+			<option value="1">1 person</option>
+			<option value="2">2 persons</option>
+			<option value="3">3 persons</option>
+			<option value="4">4 persons</option>
+			<option value="5">5 persons</option>
+			<option value="6">6 persons</option>
+			<option value="7">7 persons</option>
+			<option value="8">8 persons</option>
+			<option value="9">9 persons</option>
+			<option value="10">10 persons</option>
+			<option value="11">11 persons</option>
+			<option value="12">12 persons</option>
+			<option value="13">13 persons</option>
+			<option value="14">14 persons</option>
+			<option value="15">15 persons</option>
+			<option value="16">16 persons</option>
+			<option value="17">17 persons</option>
+			<option value="18">18 persons</option>
+			<option value="19">19 persons</option>
+			<option value="20">20 persons</option>
+		</select>
+
+		<label for="qualifications">Qualifications Required:</label>
+		<input type="text" id="qualifications" name="qualifications" required>
+
+		<button type="button" onclick="submitForm()">Create Post</button>
+        
+	</form>
+</div>
+
+
+<script>
+	function submitForm() {
+		// You can add your logic here to handle the form submission
+		// For example, you can use JavaScript to send the data to a server or perform any client-side validation.
+		// This example simply logs the form data to the console.
+		const formData = new FormData(document.getElementById('jobForm'));
+		for (const [key, value] of formData.entries()) {
+			console.log(${key} : ${value});
+		}
+	}
+</script>
+
+</body>
+</html>

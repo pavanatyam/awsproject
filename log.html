@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       
+        
+    body {
+        font-family: Arial, sans-serif;
+        
+        
+        background-size: cover;
+        background-position: center;
+    
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .posts-container {
+            width: 100%;
+            overflow-y: auto;
+        }
+
+        .post {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .create-profile-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .create-button, .profile-button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .create-button:hover, .profile-button:hover {
+            background-color: #45a049;
+        }
+
+        .greeting {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        .button-icon {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="greeting" id="greeting">Hi, Welcome to Her Opportune</div>
+        <div class="create-profile-buttons">
+            <button class="create-button" onclick="redirectToCreateJobPost()">
+                <a href="login.html">
+                <i class="fas fa-plus button-icon"></i>Create Job Post
+            </a>
+            </button>
+            
+        <button class="profile-button" onclick="redirectToProfile()">
+            <a href="user.html">
+                <i class="fas fa-user button-icon"></i>Profile
+            </a>
+        </button>
+        
+    </div>
+        
+        <div class="posts-container">
+            <!-- Posts from other users -->
+            <div class="post">
+                <h3><a href="contain.html">Stitching</a></h3>
+
+                <p>We need help for stitching clothes</p>
+                <p>Posted by: Sri Devi</p>
+            </div>
+
+            <div class="post">
+                <h3><a href="container1.html">Assistant cook</a></h3>
+
+                <p>We need help for cooking </p>
+                <p>Posted by: Lakshmi</p>
+            </div>
+
+
+            <div class="post">
+                <h3><a href="container2.html">Baby sitting</a></h3>
+
+                <p>We need help to look our child</p>
+                <p>Posted by: Anu</p>
+            </div>
+
+            <div class="post">
+                <h3>Post Title 4</h3>
+                <p>Content of another post from another user goes here.</p>
+                <p>Posted by: User426</p>
+            </div>
+
+            <div class="post">
+                <h3>Post Title 5</h3>
+                <p>Content of another post from another user goes here.</p>
+                <p>Posted by: User457</p>
+            </div>
+
+            <!-- Add more posts here -->
+        </div>
+
+        <!-- Create Job Post button and Profile button -->
+        
+    </div>
+
+    <script>
+        function redirectToCreateJobPost() {
+            // Add logic to redirect to the create job post page
+           
+            alert("Redirecting to create job post page");
+        }
+
+        function redirectToProfile() {
+            // Add logic to redirect to the user's profile page
+            alert("Redirecting to user's profile page");
+        }
+    </script>
+
+</body>
+</html>
